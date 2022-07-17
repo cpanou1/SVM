@@ -64,22 +64,3 @@ plt.plot(XX, yy, 'k-')
 plt.scatter(training_X[:, 0], training_X[:, 1], c=training_y)
 plt.legend()
 plt.show()
-
-# non-linear data
-circle_X, circle_y = datasets.make_circles(n_samples=300, noise=0.05)
-
-# show raw non-linear data
-plt.scatter(circle_X[:, 0], circle_X[:, 1], c=circle_y, marker='.')
-plt.show()
-
-# make non-linear algorithm for model
-nonlinear_clf = svm.SVC(kernel='rbf', C=1.0)
-
-# training non-linear model
-nonlinear_clf.fit(circle_X, circle_y)
-
-# plot data and decision boundary
-plt.scatter(circle_X[:, 0], circle_X[:, 1], c=circle_y, s=50)
-plot_decision_boundary(nonlinear_clf)
-plt.scatter(nonlinear_clf.support_vectors_[:, 0], nonlinear_clf.support_vectors_[:, 1], s=50, lw=1, facecolors='none')
-plt.show()
