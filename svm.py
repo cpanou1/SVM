@@ -16,7 +16,7 @@ def plot_decision_boundary(model, ax=None):
     y = np.linspace(ylim[0], ylim[1], 30)
     Y, X = np.meshgrid(y, x)
 
-	# shape data
+    # shape data
     xy = np.vstack([X.ravel(), Y.ravel()]).T
 
     # get the decision boundary based on the model
